@@ -71,7 +71,7 @@ from itertools import combinations
 from collections import Counter
 import math
 
-excluded_champions = ['Galio', 'Baron Nashor', 'Brock', 'Sylas', 'Aurelion Sol', 'Tahm Kench', 'T-Hex', 'Ziggs']
+excluded_champions = ['Rift Herald', 'Kennen', 'Kobuko & Yuumi', 'Diana','Galio', 'Baron Nashor', 'Brock', 'Sylas', 'Aurelion Sol', 'Tahm Kench', 'T-Hex', 'Ziggs', "Kai'Sa"]
 
 LEVEL_MAX_COST = {
     1: 1,
@@ -189,7 +189,7 @@ def best_bronze_team_legal(
 
 
 
-best = best_bronze_team_legal(champions, traits, level=4, top_n= 1000)
+best = best_bronze_team_legal(champions, traits, level=4, top_n= 20)
 for i, r in enumerate(best, 1):
     print(f"#{i} bronze={r['bronze_count']} team={r['team']}")
     print("   bronze traits:", ", ".join(r["bronze_traits"]))

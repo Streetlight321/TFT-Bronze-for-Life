@@ -10,6 +10,10 @@ This small Python project finds the best early-team compositions for Teamfight T
 
 The included script scrapes champion data from Mobalytics, filters champions legal for a given player level (board cap) by cost, enumerates candidate teams, and ranks them by how many traits reach their "bronze" activation threshold.
 
+Rerolls goes as following:
+
+![TFT Rerolls Percentages](TFT Rolling.png)
+
 **Why this exists**: If you want reliable early compositions that activate many bronze-tier traits (easy-to-hit synergies for low-roll players or augment choices), this tool helps you discover the strongest low-cost teams and inspect which traits and counts make them effective.
 
 **Files**

@@ -188,8 +188,42 @@ def best_bronze_team_legal(
 
 
 
+import json
+from datetime import datetime, timezone
 
-best = best_bronze_team_legal(champions, traits, level=4, top_n= 20)
-for i, r in enumerate(best, 1):
-    print(f"#{i} bronze={r['bronze_count']} team={r['team']}")
-    print("   bronze traits:", ", ".join(r["bronze_traits"]))
+def export_best_teams_levels_2_to_5(
+    champions,
+    traits,
+    out_path="best_teams_levels_2_to_5.json",
+    top_n=20,
+    excluded=None,
+):
+    payload = {
+        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "top_n": top_n,
+        "levels": {}
+    }
+
+    for level in range(2, 6):  # 2,3,4,5
+        results = best_bronze_team_legal(
+            champions,
+            traits,
+            level=level,
+            top_n=top_n,
+            excluded=excluded,
+        )
+
+        # Make JSON shape explicit/consistent (optional but recommended)
+        for r in results:
+            r["team"] = list(r["team"])  # tuple -> list
+
+        payload["levels"][str(level)] = results
+
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+
+    return out_path
+
+# Usage
+path = export_best_teams_levels_2_to_5(champions, traits, out_path="best_levels_2_5.json", top_n=20)
+print("Wrote:", path)

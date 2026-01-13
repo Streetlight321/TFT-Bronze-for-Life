@@ -12,7 +12,8 @@ The included script scrapes champion data from Mobalytics, filters champions leg
 
 Rerolls goes as following:
 
-![TFT Rerolls Percentages](TFT Rolling.png)
+<img width="1373" height="897" alt="TFT Rolling" src="https://github.com/user-attachments/assets/57eff1ea-0d59-4530-800f-5ff2f716e164" />
+
 
 **Why this exists**: If you want reliable early compositions that activate many bronze-tier traits (easy-to-hit synergies for low-roll players or augment choices), this tool helps you discover the strongest low-cost teams and inspect which traits and counts make them effective.
 

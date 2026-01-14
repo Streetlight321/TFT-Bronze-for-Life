@@ -88,6 +88,8 @@ top_n = 1000  # how many top teams to output
 - This is an exhaustive combinatorial search — for high levels with large champion pools, runtime grows quickly
 - Results are only as accurate as the champion data being scraped; ensure trait names match your game version
 
+## Wanna use it?
+It's currently on my [website](https://yousefedd.in/tft-team-search/)! Stop by!
 ## License
 
 See [LICENSE](LICENSE) for terms.
